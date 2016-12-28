@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Container, Header, Content, Title, Footer, FooterTab, Button, Icon, Badge } from 'native-base';
+import myTheme from '../themes/default';
+
 
 import {
   AppRegistry,
@@ -13,6 +15,7 @@ import styles from '../styles';
 import AroundMeComponent from './aroundMe'
 import MessagesComponent from './messages'
 import AccountComponent from './account'
+import MessageThreadComponent from './messageThread'
 
 
 const TAB_STATE = {
@@ -35,7 +38,7 @@ export default class MainNavigation extends Component {
       case TAB_STATE.AROUND_ME:
         return(<AroundMeComponent/>)
       case TAB_STATE.MESSAGES:
-        return(<MessagesComponent/>)
+        return(<MessageThreadComponent/>)
       case TAB_STATE.ACCOUNT:
         return(<AccountComponent/>)
     }
@@ -43,7 +46,10 @@ export default class MainNavigation extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={styles.container} theme={myTheme}>
+        <Header>
+          <Title>Message Thread</Title>
+        </Header>
         <Content>
           {this.renderContent()}
         </Content>
@@ -55,7 +61,7 @@ export default class MainNavigation extends Component {
                 </Button>
                 <Button active>
                     Messages
-                    <Icon name='ios-chatbubbles-outline' />
+                    <Icon name='ios-navigate-outline' />
                 </Button>
                 <Button>
                     Account

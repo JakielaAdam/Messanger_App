@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Title } from 'native-base';
+import { Container, Header, Content, Title, List, ListItem } from 'native-base';
 
 import {
   AppRegistry,
@@ -19,7 +19,17 @@ export default class MessagesComponent extends Component {
           <Title>Messages</Title>
         </Header>
         <Content>
-
+          <List>
+              <ListItem>
+                  <Text>Simon Mignolet</Text>
+              </ListItem>
+              <ListItem>
+                  <Text>Nathaniel Clyne</Text>
+              </ListItem>
+              <ListItem>
+                  <Text>Dejan Lovren</Text>
+              </ListItem>
+          </List>
         </Content>
       </Container>
 
